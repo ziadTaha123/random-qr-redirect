@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <script>
-      const links = [
-        "https://unsplash.com/photos/black-smartphone-beside-pen-rNYCrcjUnOA",
-        "https://unsplash.com/photos/abstract-art-with-swirling-red-green-and-orange-colors-zYFXOpfcjc0"  
-      ];
-      const randomLink = links[Math.floor(Math.random() * links.length)];
-      window.location.href = randomLink;
-    </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Image</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    img {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img id="random-image" src="" alt="Random Fullscreen Image">
+
+  <script>
+    const rand = Math.random();
+    const img = document.getElementById("random-image");
+
+    if (rand < 0.1) {
+      img.src = "images/winner.png"; // 10% chance
+    } else {
+      img.src = "images/nextTime.png"; // 90% chance
+    }
+  </script>
+</body>
 </html>
